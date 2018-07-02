@@ -1,6 +1,6 @@
 # templates
 
-.NET Core 2.0 ServiceStack Templates Bootstrap Website
+.NET Core 2.1 ServiceStack Templates Bootstrap Website
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/templates.png)](http://templates.web-templates.io/)
 
