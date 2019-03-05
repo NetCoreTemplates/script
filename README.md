@@ -1,12 +1,12 @@
-# templates
+# sharp
 
-.NET Core 2.1 ServiceStack Templates Bootstrap Website
+.NET Core 2.1 ServiceStack [Sharp Pages](https://sharpscript.net/docs/sharp-pages) Bootstrap Website
 
-[![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/templates.png)](http://templates.web-templates.io/)
+[![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/sharp.png)](http://sharp.web-templates.io/)
 
-> Browse [source code](https://github.com/NetCoreTemplates/templates), view live demo [templates.web-templates.io](http://templates.web-templates.io) and install with [dotnet-new](http://docs.servicestack.net/dotnet-new):
+> Browse [source code](https://github.com/NetCoreTemplates/sharp), view live demo [sharp.web-templates.io](http://sharp.web-templates.io) and install with [dotnet-new](http://docs.servicestack.net/dotnet-new):
 
     $ dotnet tool install -g web
 
-    $ web new templates ProjectName
+    $ web new sharp ProjectName
 
