@@ -47,7 +47,7 @@ namespace MyApp
                 DebugMode = AppSettings.Get(nameof(HostConfig.DebugMode), false)
             });
 
-            Plugins.Add(new TemplatePagesFeature());
+            Plugins.Add(new SharpPagesFeature());
         }
     }
 }
