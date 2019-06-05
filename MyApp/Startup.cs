@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
@@ -6,17 +8,23 @@ using Funq;
 using ServiceStack;
 using ServiceStack.Configuration;
 using MyApp.ServiceInterface;
+using ServiceStack.Script;
+using ServiceStack.Web;
+using System;
+using System.Net;
+using ServiceStack.Text;
+using ServiceStack.Logging;
 
 namespace MyApp
 {
-    public class Startup
+    public class Startup : ModularStartup
     {
-        public IConfiguration Configuration { get; }
-        public Startup(IConfiguration configuration) => Configuration = configuration;
+        public Startup(IConfiguration configuration) 
+            : base(configuration, typeof(MyServices).Assembly) {}
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
+        public new void ConfigureServices(IServiceCollection services)
         {
         }
 
@@ -42,12 +50,15 @@ namespace MyApp
         // Configure your AppHost with the necessary configuration and dependencies your App needs
         public override void Configure(Container container)
         {
-            base.SetConfig(new HostConfig
+            Plugins.Add(new SharpPagesFeature()); // enable server-side rendering, see: https://sharpscript.net/docs/sharp-pages
+
+            SetConfig(new HostConfig
             {
-                DebugMode = AppSettings.Get(nameof(HostConfig.DebugMode), false)
+                AddRedirectParamsToQueryString = true,
+                DebugMode = AppSettings.Get(nameof(HostConfig.DebugMode), HostingEnvironment.IsDevelopment()),
             });
 
-            Plugins.Add(new SharpPagesFeature());
+            this.CustomErrorHttpHandlers[HttpStatusCode.Forbidden] =  new SharpPageHandler("/forbidden");
         }
     }
 }
