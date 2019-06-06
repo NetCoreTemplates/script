@@ -9,7 +9,7 @@ title: Sign Up
     <form action="/register" method="post">
         <div class="form-group">
             <div class="form-group" data-validation-summary="displayName,email,password,confirmPassword"></div>
-            {{ { continue: qs.redirect } | htmlHiddenInputs }}
+            {{ { redirect: qs.redirect } | htmlHiddenInputs }}
         </div>
         <div class="form-group">
             <input class="form-control form-control-lg" name="displayName" type="text" placeholder="Display Name">
@@ -46,7 +46,7 @@ title: Sign Up
 <script>
 bootstrapForm(document.querySelector('form'), {
     success: function(r) {
-        location.href = document.querySelector('[name=continue]').value || '/';
+        location.href = document.querySelector('[name=redirect]').value || '/';
     }
 });
 
