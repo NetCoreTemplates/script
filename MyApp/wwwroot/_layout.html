@@ -43,15 +43,15 @@
   <script>exports = window</script>
   {{ [ '/assets/js/jquery.min.js', '/assets/js/bootstrap.min.js', '/assets/js/servicestack-client.min.js' ]
      | bundleJs({ minify:!debug, cache:!debug, disk:!debug, out:`/js/lib.bundle${min}.js` }) }} 
+    
+  {{ [ '/assets/js/dtos.js', '/assets/js/default.js' ]
+     | bundleJs({ minify:!debug, cache:!debug, disk:!debug, out:`/js/bundle${min}.js` }) }}  
 
   <script>
     lib = window["@servicestack/client"];
     for (var k in lib) { window[k] = lib[k] }
     client = new JsonServiceClient('/');
   </script>
-    
-  {{ [ '/assets/js/dtos.js', '/assets/js/default.js' ]
-     | bundleJs({ minify:!debug, cache:!debug, disk:!debug, out:`/js/bundle${min}.js` }) }}  
 
   {{ scripts | raw }}
 
