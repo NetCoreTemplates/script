@@ -13,8 +13,8 @@
     {{#if message}}
         <p>{{message}}</p>
     {{else if role}}
-        <p v-else-if="role">Missing role <code>{{role}}</code></p>
-    {{else if role}}
-        <p v-else-if="permission">Missing permission <code>{{permission}}</code></p>
+        <p>Missing role <code>{{role}}</code></p>
+    {{else if permission}}
+        <p>Missing permission <code>{{permission}}</code></p>
     {{/if}}
 </div>

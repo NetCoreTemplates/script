@@ -39,7 +39,7 @@ title: Sign In
     <div class="col-5">
         <div class="row justify-content-end mt-5">
             <div class="col col-8">
-                <v-nav-button-group :items="store.nav.navItemsMap.auth" :attributes="store.userAttributes" :baseHref="store.nav.baseUrl" block lg />
+                {{ 'auth'.navItems().navButtonGroup({ navClass: '', navItemClass: 'btn btn-block btn-lg' }) }}
             </div>
         </div>
     </div>
@@ -48,13 +48,13 @@ title: Sign In
 {{#raw appendTo scripts}}
 <script>
 bootstrapForm(document.querySelector('form'), {
-    success: (r) => {
+    success: function(r) {
         location.href = document.querySelector('[name=continue]').value || '/';
     }
 });
 
 bindHandlers({
-    switchUser: (u) => {
+    switchUser: function(u) {
         document.querySelector("[name=userName]").value = u;
         document.querySelector("[name=password]").value = 'p@55wOrd';
     }

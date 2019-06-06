@@ -1,5 +1,5 @@
 <!--
-title: Sign In
+title: Sign Up
 -->
 
 <div class="row">
@@ -45,13 +45,13 @@ title: Sign In
 {{#raw appendTo scripts}}
 <script>
 bootstrapForm(document.querySelector('form'), {
-    success: (r) => {
+    success: function(r) {
         location.href = document.querySelector('[name=continue]').value || '/';
     }
 });
 
 bindHandlers({
-    newUser: (u) => {
+    newUser: function(u) {
         var names = u.split('@');
         document.querySelector("[name=displayName]").value = toPascalCase(names[0]) + " " + toPascalCase(splitOnFirst(names[1],'.')[0]); 
         document.querySelector("[name=email]").value = u;

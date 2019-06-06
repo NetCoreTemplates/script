@@ -7,10 +7,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="stylesheet" href="/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/svg-auth.css">
-    <link rel="stylesheet" href="/css/svg-icons.css">
-    <link rel="stylesheet" href="/assets/css/default.css">
+    {{ (debug ? '' : '.min') | assignTo: min }}
+    {{ ['/css/buttons.css','/css/svg-auth.css','/css/svg-icons.css','/assets/css/'] 
+       | bundleCss({ minify:!debug, cache:!debug, disk:!debug, out:`/css/bundle${min}.css` }) }}
+
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
 </head>
 <body>
@@ -42,17 +42,17 @@
   </div>
 
   <script>exports = window</script>
-  <script src="/assets/js/servicestack-client.min.js"></script>
-  <script src="/assets/js/dtos.js"></script>
+  {{ [ '/assets/js/jquery.min.js', '/assets/js/bootstrap.min.js', '/assets/js/servicestack-client.min.js' ]
+     | bundleJs({ minify:!debug, cache:!debug, disk:!debug, out:`/js/lib.bundle${min}.js` }) }} 
+
   <script>
-    var lib = window["@servicestack/client"];
-    for (var k in lib) { window[k] = lib[k]; }
-    var client = new JsonServiceClient('/');
+    lib = window["@servicestack/client"];
+    for (var k in lib) { window[k] = lib[k] }
+    client = new JsonServiceClient('/');
   </script>
     
-  <script src="/assets/js/jquery.min.js"></script>
-  <script src="/assets/js/bootstrap.min.js"></script>
-  <script src="/assets/js/default.js"></script>
+  {{ [ '/assets/js/dtos.js', '/assets/js/default.js' ]
+     | bundleJs({ minify:!debug, cache:!debug, disk:!debug, out:`/js/bundle${min}.js` }) }}  
 
   {{ scripts | raw }}
 
