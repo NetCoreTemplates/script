@@ -58,6 +58,7 @@ namespace MyApp
                 DebugMode = AppSettings.Get(nameof(HostConfig.DebugMode), HostingEnvironment.IsDevelopment()),
             });
 
+            this.CustomErrorHttpHandlers[HttpStatusCode.NotFound] = new SharpPageHandler("/notfound");
             this.CustomErrorHttpHandlers[HttpStatusCode.Forbidden] = new SharpPageHandler("/forbidden");
 
             Svg.CssFillColor["svg-icons"] = "#E91E63";
