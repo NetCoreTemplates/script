@@ -13,7 +13,7 @@ title: Sharp Pages
     {{#if isAuthenticated}}
       <div class="text-right">
         <p class="pt-3">Hi {{userSession.displayName}}!</p>
-        <a href="/auth/logout?continue=/" class="btn btn-sm btn-primary">Sign Out</a>
+        <a href="/auth/logout?continue={{PathInfo}}" class="btn btn-sm btn-primary">Sign Out</a>
       </div>
     {{else}}
       <div class="text-right">

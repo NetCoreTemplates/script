@@ -2,6 +2,10 @@
 title: Sign In
 -->
 
+{{#if isAuthenticated}}
+    {{ httpResult({ status:301, Location:qs.redirect ?? '/' }) | return }}
+{{/if}}
+
 <div class="row">
     <div class="col-4">
         <h3>{{title}}</h3>
