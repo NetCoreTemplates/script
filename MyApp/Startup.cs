@@ -63,7 +63,7 @@ namespace MyApp
             this.CustomErrorHttpHandlers[HttpStatusCode.Forbidden] = new SharpPageHandler("/forbidden");
 
             Svg.Load(RootDirectory.GetDirectory("/assets/svg"));
-            Svg.CssFillColor["svg-icons"] = "#E91E63";
+            Svg.CssFillColor["svg-icons"] = "#343A40";
         }
     }
 }
