@@ -3,7 +3,7 @@ title: Sign In
 -->
 
 {{#if isAuthenticated}}
-    {{ httpResult({ status:300, Location:qs.redirect ?? '/' }) | return }}
+    {{ httpResult({ status:302, Location:qs.redirect ?? '/' }) | return }}
 {{/if}}
 
 <div class="row">
