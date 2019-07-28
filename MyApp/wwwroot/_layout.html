@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    {{ (debug ? '' : '[hash].min') | assignTo: min }}
+    {{ (debug ? '' : '[hash].min') | to => min }}
 
     {{ [ '!/assets/css/default.css', '/assets/css/', '/css/buttons.css', '/css/svg-auth.css', '/css/svg-icons.css', '/css/app.css' ]
        | bundleCss({ disk:!debug, out:`/css/lib.bundle${min}.css` }) }}
