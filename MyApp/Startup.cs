@@ -61,9 +61,6 @@ namespace MyApp
 
             this.CustomErrorHttpHandlers[HttpStatusCode.NotFound] = new SharpPageHandler("/notfound");
             this.CustomErrorHttpHandlers[HttpStatusCode.Forbidden] = new SharpPageHandler("/forbidden");
-
-            Svg.Load(RootDirectory.GetDirectory("/assets/svg"));
-            Svg.CssFillColor["svg-icons"] = "#2f495e";
         }
     }
 }
