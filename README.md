@@ -1,4 +1,4 @@
-# sharp
+# script
 
 .NET Core 2.1 ServiceStack [#Script Pages](https://sharpscript.net/docs/sharp-pages) Bootstrap Website
 
@@ -8,5 +8,5 @@
 
     $ dotnet tool install -g web
 
-    $ web new sharp ProjectName
+    $ web new script ProjectName
 
