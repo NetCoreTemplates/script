@@ -11,7 +11,6 @@ using MyApp.ServiceInterface;
 using ServiceStack.Script;
 using ServiceStack.Web;
 using System;
-using System.Net;
 using ServiceStack.Text;
 using ServiceStack.Logging;
 
@@ -58,9 +57,6 @@ namespace MyApp
                 AddRedirectParamsToQueryString = true,
                 DebugMode = AppSettings.Get(nameof(HostConfig.DebugMode), HostingEnvironment.IsDevelopment()),
             });
-
-            this.CustomErrorHttpHandlers[HttpStatusCode.NotFound] = new SharpPageHandler("/notfound");
-            this.CustomErrorHttpHandlers[HttpStatusCode.Forbidden] = new SharpPageHandler("/forbidden");
         }
     }
 }
