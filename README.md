@@ -1,6 +1,6 @@
 # sharp
 
-.NET Core 2.1 ServiceStack [Sharp Pages](https://sharpscript.net/docs/sharp-pages) Bootstrap Website
+.NET Core 2.1 ServiceStack [#Script Pages](https://sharpscript.net/docs/sharp-pages) Bootstrap Website
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/sharp.png)](http://sharp.web-templates.io/)
 
