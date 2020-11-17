@@ -35,9 +35,9 @@
 
             <p>
                 We're sorry <b>{{ PathInfo }}</b> is no longer here.
-            </p> 
+            </p>
 
-            {{ (PathInfo ?? '').lastRightPart('/') | to => search }}
+            {{ var search = (PathInfo ?? '').lastRightPart('/') }}
             {{#if search}}
                 <p> 
                     Maybe Google has it?

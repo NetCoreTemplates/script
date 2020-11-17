@@ -1,6 +1,6 @@
 # script
 
-.NET Core 3.1 ServiceStack [#Script Pages](https://sharpscript.net/docs/sharp-pages) Bootstrap Website
+.NET Core 5.0 ServiceStack [#Script Pages](https://sharpscript.net/docs/sharp-pages) Bootstrap Website
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/script.png)](http://script.web-templates.io/)
 

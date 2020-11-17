@@ -15,3 +15,6 @@ a {
     margin: 10px;
     color: #333;
 }
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
