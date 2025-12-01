@@ -1,18 +1,15 @@
 # script
 
-.NET 6.0 ServiceStack [#Script Pages](https://sharpscript.net/docs/sharp-pages) Bootstrap Website
+.NET 10.0 ServiceStack [#Script Pages](https://sharpscript.net/docs/sharp-pages) Bootstrap Website
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/script.png)](http://script.web-templates.io/)
 
-> Browse [source code](https://github.com/NetCoreTemplates/script), view live demo [script.web-templates.io](http://script.web-templates.io) and install with [dotnet-new](https://docs.servicestack.net/dotnet-new):
+> Browse [source code](https://github.com/NetCoreTemplates/script), view live demo [script.web-templates.io](http://script.web-templates.io) and install with:
 
-    $ dotnet tool install -g x
+```bash
+npx create-net script ProjectName
+```
 
-    $ x new script ProjectName
+## Jumpstart with Copilot
 
-Alternatively write new project files directly into an empty repository, using the Directory Name as the ProjectName:
-
-    $ git clone https://github.com/<User>/<ProjectName>.git
-    $ cd <ProjectName>
-    $ x new script
-
+Instantly [scaffold a new App with this template](https://github.com/new?template_name=script&template_owner=NetCoreTemplates) using GitHub Copilot, just describe the features you want and watch Copilot build it!
